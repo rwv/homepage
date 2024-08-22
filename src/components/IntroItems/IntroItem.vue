@@ -4,6 +4,7 @@
       <slot name="icon"></slot>
     </i>
     <div class="details">
+      <slot name="beforeHeading"></slot>
       <h3>
         <slot name="heading"></slot>
       </h3>
@@ -12,11 +13,40 @@
   </div>
 </template>
 
+<style lang="scss">
+.intro {
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-row {
+    display: flex;
+    flex: 0 0 100%;
+
+    @media (max-width: 500px) {
+      & {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &-label {
+    flex: 0 0 12em;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  &-icon {
+    margin-right: 0.5em;
+  }
+}
+</style>
+
 <style scoped>
 .item {
   margin-top: 2rem;
   display: flex;
-  position: relative;
 }
 
 .details {
@@ -39,6 +69,12 @@ h3 {
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
+}
+
+@media (max-width: 1024px) {
+  i {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {

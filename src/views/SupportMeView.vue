@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheIntro from '@/components/TheIntro.vue'
+import TheSupportMe from '@/components/TheSupportMe.vue'
 </script>
 
 <template>
   <main>
-    <TheIntro />
+    <TheSupportMe />
   </main>
 </template>

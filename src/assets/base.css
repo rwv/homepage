@@ -55,6 +55,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  position: relative;
   font-weight: normal;
 }
 
@@ -78,6 +79,9 @@ body {
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
+    'Microsoft Yahei',
+    'PingFang SC',
+    system-ui,
     sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
