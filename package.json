@@ -41,7 +41,7 @@
     "eslint": "^8.57.1",
     "eslint-plugin-vue": "^9.29.1",
     "lint-staged": "^15.2.10",
-    "npm-run-all2": "^6.2.4",
+    "npm-run-all2": "^7.0.0",
     "prettier": "^3.2.5",
     "sass-embedded": "^1.80.3",
     "typescript": "~5.5.4",
