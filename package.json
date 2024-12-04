@@ -42,7 +42,7 @@
     "eslint-plugin-vue": "^9.32.0",
     "lint-staged": "^15.2.10",
     "npm-run-all2": "^6.2.4",
-    "prettier": "^3.4.1",
+    "prettier": "^3.4.2",
     "sass-embedded": "^1.81.1",
     "typescript": "~5.5.4",
     "vite": "^5.4.11",
