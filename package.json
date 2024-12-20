@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^2.0.0",
-    "@vicons/fa": "^0.12.0",
+    "@vicons/fa": "^0.13.0",
     "@vicons/fluent": "^0.13.0",
     "@vicons/ionicons5": "^0.12.0",
     "husky": "^9.1.7",
