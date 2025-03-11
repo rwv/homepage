@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
+    "@commitlint/config-conventional": "^19.8.0",
     "@rushstack/eslint-patch": "^1.10.5",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^22.13.10",
