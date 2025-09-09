@@ -12,7 +12,8 @@ const hoverStatus = {
   afdian: ref(false),
   Ethereum: ref(false),
   Dogecoin: ref(false),
-  WeChat: ref(false)
+  WeChat: ref(false),
+  USDT: ref(false)
 }
 </script>
 
