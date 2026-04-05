@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/rwv/homepage/compare/v1.0.0...v2.0.0) (2026-04-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Complete framework migration from Vue 3 to Astro
+
+### Code Refactoring
+
+* rewrite from Vue 3 SPA to Astro static site ([#252](https://github.com/rwv/homepage/issues/252)) ([600d1b4](https://github.com/rwv/homepage/commit/600d1b4290e90b1924f804a65a01496fed1db828))
+
 ## 1.0.0 (2024-08-22)
 
 
