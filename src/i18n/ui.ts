@@ -9,6 +9,8 @@ export const defaultLang: Lang = 'en'
 export const ui = {
   en: {
     'site.name': 'rwv',
+    'site.description':
+      "rwv's personal homepage - Projects include InBrowser.App, Look Scanned, Chinese DOS Games and more.",
 
     'portals.title': 'Portals',
     'portals.GitHub.title': 'GitHub',
@@ -52,6 +54,7 @@ export const ui = {
   },
   zh: {
     'site.name': 'rwv',
+    'site.description': 'rwv 的个人主页 - 作品包括 InBrowser.App、Look Scanned、在线 DOS 游戏等。',
 
     'portals.title': '传送门',
     'portals.GitHub.title': 'GitHub',
