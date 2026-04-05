@@ -1,0 +1,4 @@
+{
+  "*.astro": "prettier --write",
+  "*.{js,mjs,ts,json,css}": "oxfmt"
+}

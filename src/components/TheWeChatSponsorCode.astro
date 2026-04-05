@@ -1,0 +1,21 @@
+---
+import IntroItem from './IntroItem.astro'
+import IconSupport from './icons/IconSupport.astro'
+import BackToHomepage from './BackToHomepage.astro'
+import type { Lang } from '@/i18n/ui'
+import { useTranslations } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+---
+
+<IntroItem>
+  <BackToHomepage lang={lang} slot="beforeHeading" />
+  <Fragment slot="icon"><IconSupport /></Fragment>
+  <Fragment slot="heading">{t('support.WeChat.description')}</Fragment>
+  <img src="/WeChatSponsorCode.svg" alt="WeChat Sponsor QR Code" class="w-full dark:opacity-75" />
+</IntroItem>

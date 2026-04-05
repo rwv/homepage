@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components'
+import IntroItem from './IntroItem.astro'
+import IconAperture from './icons/IconAperture.astro'
+import { portals } from '@/data/portals'
+import type { Lang } from '@/i18n/ui'
+import { useTranslations } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+---
+
+<IntroItem>
+  <Fragment slot="icon"><IconAperture /></Fragment>
+  <Fragment slot="heading">{t('portals.title')}</Fragment>
+
+  <div class="flex flex-wrap">
+    {
+      portals.map((portal) => (
+        <div class="flex flex-[0_0_100%] max-[500px]:flex-wrap">
+          <div class="flex items-baseline gap-2 flex-[0_0_12em] whitespace-nowrap">
+            <Icon name={portal.icon} class="h-[1em] w-[1em] shrink-0" />
+            <span>{t(`portals.${portal.key}.title`)}</span>
+          </div>
+          <div>
+            <a href={portal.link} target="_blank">
+              {portal.label}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</IntroItem>

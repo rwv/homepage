@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon/components'
+import QRCode from './QRCode.astro'
+import IconAfdianOneColor from './icons/IconAfdianOneColor.astro'
+import { supports } from '@/data/support'
+import type { Lang } from '@/i18n/ui'
+import { useTranslations, getLocalizedPath } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+---
+
+<div class="mt-4">
+  <div>{t('support.platformHint')}</div>
+
+  <div class="flex flex-wrap">
+    {
+      supports.map((support) => (
+        <div class="group flex flex-[0_0_100%]">
+          <div class="w-0 h-0 relative">
+            <div class="w-[200px] h-[200px] absolute right-[0.5em] -top-[100px] hidden lg:group-hover:block">
+              {support.key === 'WeChat' ? (
+                <img src="/WeChatSponsorCode.svg" alt="" class="w-full h-full" />
+              ) : (
+                <QRCode value={support.link} />
+              )}
+            </div>
+          </div>
+          <div class="flex-[0_0_7em] whitespace-nowrap align-top">
+            {support.key === 'afdian' ? (
+              <IconAfdianOneColor class="inline-block align-text-bottom" />
+            ) : (
+              <Icon name={support.icon} class="inline-block h-[1em] w-[1em] align-text-bottom" />
+            )}
+            <span class="ml-1">{t(`support.${support.key}.title`)}</span>
+          </div>
+          <div class="break-all">
+            {support.key === 'WeChat' ? (
+              <a href={getLocalizedPath('/sponsor/wechat', lang)}>
+                {t('support.WeChat.description')}
+              </a>
+            ) : (
+              <a href={support.link} target="_blank">
+                {support.label}
+              </a>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

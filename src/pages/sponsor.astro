@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SupportMe from '@/components/SupportMe.astro'
+import SupportMeDetailList from '@/components/SupportMeDetailList.astro'
+import BackToHomepage from '@/components/BackToHomepage.astro'
+
+const lang = 'en'
+---
+
+<Layout lang={lang}>
+  <SupportMe lang={lang} showLink={false}>
+    <BackToHomepage lang={lang} slot="beforeHeading" />
+    <SupportMeDetailList lang={lang} />
+  </SupportMe>
+</Layout>

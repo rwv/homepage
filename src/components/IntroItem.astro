@@ -1,0 +1,64 @@
+---
+
+---
+
+<div class="item">
+  <i
+    class="hidden lg:flex items-center justify-center w-8 h-8 text-[var(--color-text-primary)] lg:absolute lg:border lg:border-[var(--color-border)] lg:bg-[var(--color-background)] lg:rounded-lg lg:w-[50px] lg:h-[50px]"
+  >
+    <slot name="icon" />
+  </i>
+  <div class="flex-1 lg:ml-4">
+    <slot name="beforeHeading" />
+    <h3 class="text-[1.2rem] font-medium mb-1.5 text-[var(--color-heading)]">
+      <slot name="heading" />
+    </h3>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .item {
+    margin-top: 2rem;
+    display: flex;
+  }
+
+  @media (min-width: 1024px) {
+    .item {
+      margin-top: 0;
+      padding: 0.4rem 0 1rem calc(80px);
+    }
+
+    i {
+      top: calc(50% - 25px);
+      left: -26px;
+      position: absolute;
+    }
+
+    .item::before {
+      content: ' ';
+      border-left: 1px solid var(--color-border);
+      position: absolute;
+      left: 0;
+      bottom: calc(50% + 25px);
+      height: calc(50% - 25px);
+    }
+
+    .item::after {
+      content: ' ';
+      border-left: 1px solid var(--color-border);
+      position: absolute;
+      left: 0;
+      top: calc(50% + 25px);
+      height: calc(50% - 25px);
+    }
+
+    .item:first-of-type::before {
+      display: none;
+    }
+
+    .item:last-of-type::after {
+      display: none;
+    }
+  }
+</style>
