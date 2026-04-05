@@ -1,0 +1,41 @@
+---
+import IntroItem from './IntroItem.astro'
+import IconSupport from './icons/IconSupport.astro'
+import type { Lang } from '@/i18n/ui'
+import { useTranslations, getLocalizedPath } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+  showLink?: boolean
+}
+
+const { lang, showLink = true } = Astro.props
+const t = useTranslations(lang)
+---
+
+<IntroItem>
+  <slot name="beforeHeading" slot="beforeHeading" />
+  <Fragment slot="icon"><IconSupport /></Fragment>
+  <Fragment slot="heading">{t('support.title')}</Fragment>
+
+  <p>
+    <span>{t('support.text')}</span>
+    {
+      showLink ? (
+        <a href={getLocalizedPath('/sponsor', lang)}>{t('support.supportMeText')}</a>
+      ) : (
+        <span>{t('support.supportMeText')}</span>
+      )
+    }
+    <span> &#10084;</span>
+  </p>
+
+  <span>{t('support.yourSupport')}</span>
+  <ul class="list-disc pl-5 mt-1">
+    <li>{t('support.benefit1')}</li>
+    <li>{t('support.benefit2')}</li>
+    <li>{t('support.benefit3')}</li>
+  </ul>
+
+  <slot />
+</IntroItem>

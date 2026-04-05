@@ -1,0 +1,2 @@
+# Redirect old blog URLs to blog.rwv.dev
+/20:year/:month/:day/* https://blog.rwv.dev/20:year/:month/:day/:splat 301

@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PortalList from '@/components/PortalList.astro'
+import ProjectList from '@/components/ProjectList.astro'
+import SupportMe from '@/components/SupportMe.astro'
+
+const lang = 'zh'
+---
+
+<Layout lang={lang}>
+  <PortalList lang={lang} />
+  <ProjectList lang={lang} />
+  <SupportMe lang={lang} />
+</Layout>

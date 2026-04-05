@@ -3,55 +3,37 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.6.0",
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "lint-check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --no-fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "format-check": "prettier --check src/",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "format": "oxfmt && prettier --write \"src/**/*.astro\"",
+    "format-check": "oxfmt --check && prettier --check \"src/**/*.astro\"",
     "prepare": "husky"
   },
   "dependencies": {
-    "@chenfengyuan/vue-qrcode": "^2.0.0",
-    "@vicons/fa": "^0.13.0",
-    "@vicons/fluent": "^0.13.0",
-    "@vicons/ionicons5": "^0.13.0",
+    "@iconify-json/fa6-brands": "^1.2.3",
+    "@iconify-json/fa6-solid": "^1.2.3",
+    "@iconify-json/fluent": "^1.2.3",
+    "@iconify-json/ion": "^1.2.3",
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.10",
+    "astro-icon": "^1.1.5",
     "husky": "^9.1.7",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.13",
-    "vue-gtag": "^2.1.2",
-    "vue-i18n": "^10.0.5",
-    "vue-router": "^4.5.0"
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@rushstack/eslint-patch": "^1.11.0",
-    "@tsconfig/node20": "^20.1.5",
-    "@types/node": "^22.13.14",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/tsconfig": "^0.7.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-vue": "^9.33.0",
+    "@types/qrcode": "^1.5.5",
     "lint-staged": "^15.5.0",
-    "npm-run-all2": "^6.2.4",
+    "oxfmt": "^0.43.0",
     "prettier": "^3.5.3",
-    "sass-embedded": "^1.86.0",
-    "typescript": "~5.5.4",
-    "vite": "^5.4.21",
-    "vue-tsc": "^2.2.8"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "~5.5.4"
   },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx,vue}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  }
+  "packageManager": "pnpm@9.6.0"
 }

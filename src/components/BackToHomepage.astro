@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { Lang } from '@/i18n/ui'
+import { useTranslations, getLocalizedPath } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+---
+
+<div class="back-to-homepage">
+  <a
+    href={getLocalizedPath('/', lang)}
+    class="!text-inherit opacity-50 hover:opacity-90 hover:!bg-inherit"
+  >
+    <Icon
+      name="fa6-solid:circle-arrow-left"
+      class="inline-block mr-1.5 h-[1em] w-[1em] align-text-bottom"
+    />
+    {t('nav.backToHomepage')}
+  </a>
+</div>

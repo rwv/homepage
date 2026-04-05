@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components'
+import IntroItem from './IntroItem.astro'
+import IconEcosystem from './icons/IconEcosystem.astro'
+import { projects } from '@/data/projects'
+import type { Lang } from '@/i18n/ui'
+import { useTranslations } from '@/i18n/utils'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+---
+
+<IntroItem>
+  <Fragment slot="icon"><IconEcosystem /></Fragment>
+  <Fragment slot="heading">{t('projects.title')}</Fragment>
+
+  <div class="flex flex-wrap">
+    {
+      projects.map((project) => (
+        <div class="flex flex-[0_0_100%] max-[500px]:flex-wrap">
+          <div class="flex items-baseline gap-2 flex-[0_0_12em] whitespace-nowrap">
+            <Icon name={project.icon} class="h-[1em] w-[1em] shrink-0" />
+            <a href={project.link} target="_blank">
+              {t(`projects.${project.key}.title`)}
+            </a>
+          </div>
+          <div>{t(`projects.${project.key}.description`)}</div>
+        </div>
+      ))
+    }
+  </div>
+</IntroItem>

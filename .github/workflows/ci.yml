@@ -32,13 +32,10 @@ jobs:
       - name: Format Check
         run: pnpm run format-check
 
-      - name: ESLint Check
-        run: pnpm run lint-check
+      - name: Astro Check
+        run: pnpm run check
 
-      - name: TypeScript Check
-        run: pnpm run type-check
-
-      - name: Build Web
+      - name: Build
         run: pnpm run build
 
       - name: Upload to Artifact
