@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/rwv/homepage/compare/v2.0.0...v2.0.1) (2026-04-05)
+
+
+### Bug Fixes
+
+* improve accessibility (color contrast, heading order, meta description) ([#254](https://github.com/rwv/homepage/issues/254)) ([a3d74b8](https://github.com/rwv/homepage/commit/a3d74b8a15a4d9f09e884d8faa6dcb670589199c))
+
 ## [2.0.0](https://github.com/rwv/homepage/compare/v1.0.0...v2.0.0) (2026-04-05)
 
 
