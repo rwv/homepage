@@ -3,6 +3,7 @@ import '@/styles/global.css'
 import type { Lang } from '@/i18n/ui'
 import { useTranslations } from '@/i18n/utils'
 import { ClientRouter } from 'astro:transitions'
+import { slide } from 'astro:transitions'
 
 interface Props {
   lang: Lang
@@ -31,7 +32,7 @@ const t = useTranslations(lang)
           </div>
         </div>
       </header>
-      <main>
+      <main transition:animate={slide()}>
         <slot />
       </main>
     </div>
