@@ -50,7 +50,10 @@ export const ui = {
     'support.WeChat.title': 'WeChat',
     'support.WeChat.description': 'WeChat QR code',
 
-    'nav.backToHomepage': 'Back To Homepage'
+    'nav.backToHomepage': 'Back To Homepage',
+
+    'error.notFound': '404 - Page Not Found',
+    'error.backToHomepage': 'Back to Homepage'
   },
   zh: {
     'site.name': 'rwv',
@@ -93,6 +96,9 @@ export const ui = {
     'support.WeChat.title': '微信',
     'support.WeChat.description': '微信赞赏码',
 
-    'nav.backToHomepage': '返回主页'
+    'nav.backToHomepage': '返回主页',
+
+    'error.notFound': '404 - 页面未找到',
+    'error.backToHomepage': '返回主页'
   }
 } as const
