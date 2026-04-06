@@ -14,5 +14,8 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  prefetch: {
+    defaultStrategy: 'viewport'
+  },
   integrations: [icon()]
 })
