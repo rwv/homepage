@@ -2,6 +2,7 @@
 import '@/styles/global.css'
 import type { Lang } from '@/i18n/ui'
 import { useTranslations } from '@/i18n/utils'
+import { ClientRouter } from 'astro:transitions'
 
 interface Props {
   lang: Lang
@@ -19,17 +20,7 @@ const t = useTranslations(lang)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{t('site.name')}</title>
     <meta name="description" content={t('site.description')} />
-
-    <script type="speculationrules">
-      {
-        "prerender": [
-          {
-            "where": { "href_matches": "/*" },
-            "eagerness": "moderate"
-          }
-        ]
-      }
-    </script>
+    <ClientRouter />
   </head>
   <body>
     <div class="mx-auto max-w-5xl p-8 lg:grid lg:grid-cols-[1fr_3fr] lg:p-0 lg:px-8">
@@ -46,7 +37,7 @@ const t = useTranslations(lang)
     </div>
 
     <!-- Auto-detect language and redirect -->
-    <script is:inline>
+    <script is:inline data-astro-rerun>
       ;(function () {
         if (
           window.location.pathname === '/' &&
