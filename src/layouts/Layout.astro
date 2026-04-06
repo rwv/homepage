@@ -1,7 +1,8 @@
 ---
 import '@/styles/global.css'
 import type { Lang } from '@/i18n/ui'
-import { useTranslations } from '@/i18n/utils'
+import { useTranslations, getLocalizedPath } from '@/i18n/utils'
+import { defaultLang } from '@/i18n/ui'
 import { ClientRouter } from 'astro:transitions'
 
 interface Props {
@@ -10,6 +11,10 @@ interface Props {
 
 const { lang } = Astro.props
 const t = useTranslations(lang)
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const currentPath =
+  lang === defaultLang ? Astro.url.pathname : Astro.url.pathname.replace(`/${lang}`, '') || '/'
 ---
 
 <!doctype html>
@@ -20,6 +25,27 @@ const t = useTranslations(lang)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{t('site.name')}</title>
     <meta name="description" content={t('site.description')} />
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="alternate" hreflang="en" href={new URL(currentPath, Astro.site).href} />
+    <link rel="alternate" hreflang="zh" href={new URL(`/zh${currentPath}`, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(currentPath, Astro.site).href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={t('site.name')} />
+    <meta property="og:description" content={t('site.description')} />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'zh' ? 'en_US' : 'zh_CN'} />
+    <meta property="og:site_name" content={t('site.name')} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={t('site.name')} />
+    <meta name="twitter:description" content={t('site.description')} />
+
     <ClientRouter />
   </head>
   <body>
