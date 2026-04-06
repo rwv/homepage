@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/rwv/homepage/compare/v2.0.1...v2.1.0) (2026-04-06)
+
+
+### Features
+
+* add View Transitions with prefetch for better navigation UX ([#256](https://github.com/rwv/homepage/issues/256)) ([e6a7a8c](https://github.com/rwv/homepage/commit/e6a7a8cb1d62f249ba730115aa31b5dbf4649712))
+
 ## [2.0.1](https://github.com/rwv/homepage/compare/v2.0.0...v2.0.1) (2026-04-05)
 
 
