@@ -1,10 +1,30 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import { useTranslations } from '@/i18n/utils'
+import type { Lang } from '@/i18n/ui'
+
+const lang: Lang = 'en'
+const t = useTranslations(lang)
 ---
 
-<Layout lang="en">
+<Layout lang={lang}>
   <div class="flex flex-col items-center justify-center py-20">
-    <h2 class="text-2xl font-medium mb-4">404 - Page Not Found</h2>
-    <a href="/" class="underline">Back to Homepage</a>
+    <h2 class="text-2xl font-medium mb-4">{t('error.notFound')}</h2>
+    <a href="/" class="underline">{t('error.backToHomepage')}</a>
   </div>
+
+  <script is:inline>
+    ;(function () {
+      if (navigator.language && navigator.language.startsWith('zh')) {
+        var h2 = document.querySelector('h2')
+        var a = document.querySelector('a[href="/"]')
+        if (h2) h2.textContent = '404 - \u9875\u9762\u672a\u627e\u5230'
+        if (a) {
+          a.textContent = '\u8fd4\u56de\u4e3b\u9875'
+          a.href = '/zh/'
+        }
+        document.documentElement.lang = 'zh'
+      }
+    })()
+  </script>
 </Layout>
