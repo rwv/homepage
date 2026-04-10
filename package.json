@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@commitlint/cli": "^19.8.0",
+    "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@types/qrcode": "^1.5.5",
     "lint-staged": "^15.5.0",
