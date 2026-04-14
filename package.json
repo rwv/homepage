@@ -31,7 +31,7 @@
     "@commitlint/config-conventional": "^19.8.0",
     "@types/qrcode": "^1.5.5",
     "lint-staged": "^15.5.0",
-    "oxfmt": "^0.44.0",
+    "oxfmt": "^0.45.0",
     "prettier": "^3.8.2",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "~5.5.4"
