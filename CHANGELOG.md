@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/rwv/homepage/compare/v2.1.0...v2.2.0) (2026-04-24)
+
+
+### Features
+
+* add SEO meta tags, sitemap, 404 i18n, and theme-color ([#263](https://github.com/rwv/homepage/issues/263)) ([dc2051b](https://github.com/rwv/homepage/commit/dc2051b831d04cdee8b3ee2f4ca900898a2dfa82))
+
 ## [2.1.0](https://github.com/rwv/homepage/compare/v2.0.1...v2.1.0) (2026-04-06)
 
 
