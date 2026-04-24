@@ -19,7 +19,7 @@
     "@iconify-json/fluent": "^1.2.45",
     "@iconify-json/ion": "^1.2.3",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^5.7.10",
+    "astro": "^6.1.9",
     "astro-icon": "^1.1.5",
     "husky": "^9.1.7",
     "qrcode": "^1.5.4",
